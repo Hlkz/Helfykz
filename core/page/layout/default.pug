@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    script(src='/data/lib/head.load.min.js', data-headjs-load='/data/build/js/main.min.js')
+    title !{title}
+  body
+    #loading-screen
+    #full-screen(style='display:none')
+
+      //ul.nav
+      //  each menulink in menulinks
+      //    !=t.getPageLink(menulink)
+
+      - var loadPage = (content ? 'false' : 'true')
+      #page(current=current, loadPage=loadPage)
+        - if (content)
+          !=content
+      #page-hidden(style='display:none')
